@@ -1,0 +1,23 @@
+{
+  "name": "bidirectional-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel index.js > dist/index.js",
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/educastellano/bidirectional-map.git"
+  },
+  "author": "Eduard Castellano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/educastellano/bidirectional-map/issues"
+  },
+  "homepage": "https://github.com/educastellano/bidirectional-map#readme",
+  "devDependencies": {
+    "tape": "^4.4.0"
+  }
+}
