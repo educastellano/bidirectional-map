@@ -1,14 +1,11 @@
 
-
-
 export default class BidirectionalMap {
     constructor(object=null) {
         this._map = new Map()
         this._reverse = new Map()
         if (object) {
             for (let attr of Object.keys(object)) {
-                this._map.set(attr, object[attr])
-                this._reverse.set(object[attr], attr)
+                this.set(attr, object[attr])
             }
         }
     }

@@ -25,8 +25,7 @@ var BidirectionalMap = (function () {
                 for (var _iterator = Object.keys(object)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                     var attr = _step.value;
 
-                    this._map.set(attr, object[attr]);
-                    this._reverse.set(object[attr], attr);
+                    this.set(attr, object[attr]);
                 }
             } catch (err) {
                 _didIteratorError = true;

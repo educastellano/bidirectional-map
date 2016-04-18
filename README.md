@@ -21,7 +21,7 @@ Create key-value collections with unique keys and unique values.
 
 # API
 
-[here](https://github.com/educastellano/bidirectional-map/blob/master/test.js)
+[here for now...](https://github.com/educastellano/bidirectional-map/blob/master/test.js)
 
 ## Changelog
 
