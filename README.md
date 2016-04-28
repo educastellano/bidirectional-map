@@ -1,6 +1,6 @@
 # Bidirectional Map
 
-Create key/value collections with unique keys and unique values.
+Create "key/value" collections of one-to-one correspondence. Internally it uses two [Map](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Map) objects, so both keys and values can be of any type.
 
 # Install
 
