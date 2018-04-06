@@ -5,9 +5,9 @@ export default class BidirectionalMap {
         this._reverse = new Map()
         if (object) {
             for (let in object) {
-                    if ({}.hasOwnProperty.call(object, i)) {
-                        this.set(attr, object[attr])
-                    }
+                if ({}.hasOwnProperty.call(object, i)) {
+                    this.set(attr, object[attr])
+                }
             }
         }
     }
