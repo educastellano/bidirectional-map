@@ -4,8 +4,10 @@ export default class BidirectionalMap {
         this._map = new Map()
         this._reverse = new Map()
         if (object) {
-            for (let attr of Object.keys(object)) {
-                this.set(attr, object[attr])
+            for (let in object) {
+                    if ({}.hasOwnProperty.call(object, i)) {
+                        this.set(attr, object[attr])
+                    }
             }
         }
     }
