@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel index.js > dist/index.js",
-    "test": "tape test.js"
+    "test": "tape test.js",
+    "preversion": "npm t",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
