@@ -1,6 +1,6 @@
 {
   "name": "bidirectional-map",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Create 'key/value' collections of one-to-one correspondence.",
   "main": "dist/index.js",
   "scripts": {
