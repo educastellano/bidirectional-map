@@ -17,28 +17,9 @@ var BidirectionalMap = (function () {
         this._map = new Map();
         this._reverse = new Map();
         if (object) {
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
-
-            try {
-                for (var _iterator = Object.keys(object)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    var attr = _step.value;
-
-                    this.set(attr, object[attr]);
-                }
-            } catch (err) {
-                _didIteratorError = true;
-                _iteratorError = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion && _iterator["return"]) {
-                        _iterator["return"]();
-                    }
-                } finally {
-                    if (_didIteratorError) {
-                        throw _iteratorError;
-                    }
+            for (var attr in object) {
+                if ({}.hasOwnProperty.call(object, attr)) {
+                    this.set(attr, object[attr])
                 }
             }
         }
