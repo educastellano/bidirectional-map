@@ -1,11 +1,11 @@
 var test = require('tape');
-var BiMap = require('./dist/index')
+var BiMap = require('./dist/index').default
 
 var makeOne = function() {
     return new BiMap({
         john: 'mary',
         bob: 'alice',
-        ptolemy: 'cleopatra'
+        ptolemy: 'cleopatra',
     })
 }    
 
@@ -127,5 +127,23 @@ test('it should return the values', function (t) {
     var valuesIt = monogamy.values()
     t.equals(valuesIt.next().value, 'mary');
     t.equals(valuesIt.next().value, 'alice');
+    t.end();
+});
+
+test('it should return the plain {}', function (t) {
+    var monogamy = makeOne()
+    var object = monogamy.getObject()
+    t.equals(typeof object, 'object');
+    t.equals(object['john'], 'mary');
+    t.equals(object['bob'], 'alice');
+    t.end();
+});
+
+test('it should return the reverse plain {}', function (t) {
+    var monogamy = makeOne()
+    var object = monogamy.getObjectReverse()
+    t.equals(typeof object, 'object');
+    t.equals(object['mary'], 'john');
+    t.equals(object['alice'], 'bob');
     t.end();
 });

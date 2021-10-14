@@ -61,4 +61,27 @@ export default class BidirectionalMap {
     values() {
         return this._map.values()
     }
+    getObject() {
+        for (const key of this._map.keys()) {
+            if (!isPrimitive(key)) {
+                throw new Error('There are non-primitive keys')
+            }
+        }
+        return Object.fromEntries(this._map.entries())
+    }
+    getObjectReverse() {
+        for (const key of this._reverse.keys()) {
+            if (!isPrimitive(key)) {
+                throw new Error('There are non-primitive keys')
+            }
+        }
+        return Object.fromEntries(this._reverse.entries())
+    }
+}
+
+function isPrimitive(value) {
+    return (
+        value === null || 
+        !(typeof value === 'object' || typeof value === 'function')
+    )
 }
