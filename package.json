@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel index.js > dist/index.js",
-    "test": "tape test.js",
-    "preversion": "npm t",
+    "test": "npm run build && tape test.js",
+    "preversion": "npm run test",
     "postversion": "git push && git push --tags"
   },
   "repository": {
@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/educastellano/bidirectional-map#readme",
   "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
     "tape": "^4.4.0"
   }
 }
