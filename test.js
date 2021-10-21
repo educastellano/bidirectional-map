@@ -1,5 +1,5 @@
 var test = require('tape');
-var BiMap = require('./dist/index').default
+var BiMap = require('.')
 
 var makeOne = function() {
   return new BiMap({
