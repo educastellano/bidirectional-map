@@ -46,12 +46,12 @@ map2.deleteValue('mary')
 
 | Method           | Arguments                | Return Type   | Description                                                                                                                          |
 | :--------------- | :----------------------- | :------------ | :----------------------------------------------------------------------------------------------------------------------------------- |
-| set              | key: `any`, value: `any` |               | Sets a new key/value pair                                                                                                            |
+| set              | key: `any`, value: `any` | `this`        | Sets a new key/value pair                                                                                                            |
 | get              | key: `any`               | `any`         | Returns the value                                                                                                                    |
 | getKey           | value: `any`             | `any`         | Returns the key                                                                                                                      |
 | clear            |                          |               | Removes all key/value pairs                                                                                                          |
-| delete           | key: `any`               |               | Deletes a key/value pair by **key**                                                                                                  |
-| deleteValue      | value: `any`             |               | Deletes a key/value pair by **value**                                                                                                |
+| delete           | key: `any`               | `boolean`     | Deletes a key/value pair by **key**                                                                                                  |
+| deleteValue      | value: `any`             | `boolean`     | Deletes a key/value pair by **value**                                                                                                |
 | entries          |                          | `MapIterator` | Returns a new Iterator object that contains an array of [key, value] for each element in the structure                               |
 | has              | key: `any`               | `boolean`     | Returns `true` if it exists a pair with the provided **key**, `false` otherwise                                                      |
 | hasValue         | value: `any`             | `boolean`     | Returns `true` if it exists a pair with the provided **value**, _false_ otherwise                                                    |
@@ -67,6 +67,7 @@ map2.deleteValue('mary')
   - Remove build step and babel deps
   - Replace tape for brittle, add lunte, prettier and CI
   - Add iterator
+  - Chainable set()
 - 1.1.0
   - Add `getObject()` and `getObjectReverse()` methods
 - 1.0.0

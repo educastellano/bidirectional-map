@@ -55,6 +55,15 @@ test('it should set the same key-value', function (t) {
   t.is(monogamy.hasValue(0), true)
 })
 
+test('it should chain calls to set', function (t) {
+  const monogamy = new BiMap()
+  const result = monogamy.set('a', 0).set('b', 1)
+
+  t.is(result, monogamy)
+  t.is(monogamy.get('a'), 0)
+  t.is(monogamy.get('b'), 1)
+})
+
 test('it should get the size', function (t) {
   const monogamy = makeOne()
   t.is(monogamy.size, 3)
@@ -68,16 +77,26 @@ test('it should clear', function (t) {
 
 test('it should delete by key', function (t) {
   const monogamy = makeOne()
-  monogamy.delete('john')
+  t.is(monogamy.delete('john'), true)
   t.is(monogamy.has('john'), false)
   t.is(monogamy.hasValue('mary'), false)
 })
 
+test('it should not delete by a missing key', function (t) {
+  const monogamy = new BiMap()
+  t.is(monogamy.delete('missing'), false)
+})
+
 test('it should delete by value', function (t) {
   const monogamy = makeOne()
-  monogamy.deleteValue('alice')
+  t.is(monogamy.deleteValue('alice'), true)
   t.is(monogamy.has('bob'), false)
   t.is(monogamy.hasValue('alice'), false)
+})
+
+test('it should not delete by a missing value', function (t) {
+  const monogamy = new BiMap()
+  t.is(monogamy.deleteValue('missing'), false)
 })
 
 test('it should return the entries', function (t) {

@@ -24,6 +24,7 @@ class BidirectionalMap {
     }
     this._map.set(key, value)
     this._reverse.set(value, key)
+    return this
   }
   get(key) {
     return this._map.get(key)
@@ -36,14 +37,20 @@ class BidirectionalMap {
     this._reverse.clear()
   }
   delete(key) {
+    if (!this._map.has(key)) return false
+
     const value = this._map.get(key)
     this._map.delete(key)
     this._reverse.delete(value)
+    return true
   }
   deleteValue(value) {
+    if (!this._reverse.has(value)) return false
+
     const key = this._reverse.get(value)
     this._map.delete(key)
     this._reverse.delete(value)
+    return true
   }
   entries() {
     return this._map.entries()
