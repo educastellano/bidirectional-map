@@ -1,26 +1,25 @@
-
 class BidirectionalMap {
-  constructor(object=null) {
+  constructor(object = null) {
     this._map = new Map()
     this._reverse = new Map()
     if (object) {
       for (let attr in object) {
-          if ({}.hasOwnProperty.call(object, attr)) {
-            this.set(attr, object[attr])
-          }
+        if ({}.hasOwnProperty.call(object, attr)) {
+          this.set(attr, object[attr])
+        }
       }
     }
   }
-  get size () {
+  get size() {
     return this._map.size
   }
   set(key, value) {
     if (this._map.has(key)) {
-      let _value = this._map.get(key)
+      const _value = this._map.get(key)
       this._reverse.delete(_value)
     }
     if (this._reverse.has(value)) {
-      let _key = this._reverse.get(value)
+      const _key = this._reverse.get(value)
       this._map.delete(_key)
     }
     this._map.set(key, value)
@@ -37,12 +36,12 @@ class BidirectionalMap {
     this._reverse.clear()
   }
   delete(key) {
-    let value = this._map.get(key)
+    const value = this._map.get(key)
     this._map.delete(key)
     this._reverse.delete(value)
   }
   deleteValue(value) {
-    let key = this._reverse.get(value)
+    const key = this._reverse.get(value)
     this._map.delete(key)
     this._reverse.delete(value)
   }
@@ -80,10 +79,7 @@ class BidirectionalMap {
 }
 
 function isPrimitive(value) {
-  return (
-    value === null || 
-    !(typeof value === 'object' || typeof value === 'function')
-  )
+  return value === null || !(typeof value === 'object' || typeof value === 'function')
 }
 
 module.exports = BidirectionalMap
