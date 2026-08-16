@@ -59,12 +59,14 @@ map2.deleteValue('mary')
 | values           |                          | `MapIterator` | Returns a new Iterator object that contains the **values** for each element in the structure                                         |
 | getObject        |                          | `Object`      | Parses the internal "one direction" map to a plain `{}`. **Throws exception** if the map has non-primitive key types                 |
 | getObjectReverse |                          | `Object`      | Parses the internal "one direction" reverse map to a plain `{}`. **Throws exception** if the reverse map has non-primitive key types |
+| Symbol.iterator  |                          | `MapIterator` | Returns the entries iterator, allowing the structure to be used with `for...of` and spread syntax                                    |
 
 ## Changelog
 
 - 2.0.0
   - Remove build step and babel deps
   - Replace tape for brittle, add lunte, prettier and CI
+  - Add iterator
 - 1.1.0
   - Add `getObject()` and `getObjectReverse()` methods
 - 1.0.0

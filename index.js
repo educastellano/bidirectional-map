@@ -76,6 +76,9 @@ class BidirectionalMap {
     }
     return Object.fromEntries(this._reverse.entries())
   }
+  [Symbol.iterator]() {
+    return this.entries()
+  }
 }
 
 function isPrimitive(value) {

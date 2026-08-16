@@ -128,3 +128,18 @@ test('it should return the reverse plain {}', function (t) {
   t.is(object['mary'], 'john')
   t.is(object['alice'], 'bob')
 })
+
+test('it should be iterable', function (t) {
+  const monogamy = makeOne()
+  const entries = []
+
+  for (const [key, value] of monogamy) {
+    entries.push([key, value])
+  }
+
+  t.alike(entries, [
+    ['john', 'mary'],
+    ['bob', 'alice'],
+    ['ptolemy', 'cleopatra']
+  ])
+})
