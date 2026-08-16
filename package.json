@@ -2,12 +2,12 @@
   "name": "bidirectional-map",
   "version": "1.1.1",
   "description": "Create 'key/value' collections of one-to-one correspondence.",
-  "main": "dist/index.js",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
-    "build": "babel index.js > dist/index.js",
-    "test": "npm run build && tape test.js",
-    "preversion": "npm run test",
-    "postversion": "git push && git push --tags"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -20,10 +20,6 @@
   },
   "homepage": "https://github.com/educastellano/bidirectional-map#readme",
   "devDependencies": {
-    "@babel/cli": "^7.15.7",
-    "@babel/core": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
-    "babel-plugin-add-module-exports": "^1.0.4",
-    "tape": "^4.4.0"
+    "brittle": "^4.1.0"
   }
 }

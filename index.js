@@ -1,5 +1,5 @@
 
-export default class BidirectionalMap {
+class BidirectionalMap {
   constructor(object=null) {
     this._map = new Map()
     this._reverse = new Map()
@@ -85,3 +85,5 @@ function isPrimitive(value) {
     !(typeof value === 'object' || typeof value === 'function')
   )
 }
+
+module.exports = BidirectionalMap
