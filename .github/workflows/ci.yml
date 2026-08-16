@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
+          package-manager-cache: false
       - run: npm install
       - run: npm run lint
       - run: npm test
