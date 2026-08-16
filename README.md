@@ -4,7 +4,9 @@ Create "key/value" collections of one-to-one correspondence. Internally it uses 
 
 # Install
 
-    npm install bidirectional-map
+```sh
+npm install bidirectional-map
+```
 
 # Usage
 
@@ -32,20 +34,20 @@ map2.deleteValue('mary')
 ### Constructors
 
 | Arguments        | Description                                           |
-| :--------------- | :---------------------------------------------------- |
+| ---------------- | ----------------------------------------------------- |
 |                  | Creates an empty structure                            |
 | object: `Object` | Creates a structure with the key/values of **object** |
 
 ### Properties
 
 | Property | Return Type | Description                           |
-| :------- | :---------- | :------------------------------------ |
-| size     | `any`       | Returns the number of key/value pairs |
+| -------- | ----------- | ------------------------------------- |
+| size     | `number`    | Returns the number of key/value pairs |
 
 ### Methods
 
 | Method           | Arguments                | Return Type   | Description                                                                                                                          |
-| :--------------- | :----------------------- | :------------ | :----------------------------------------------------------------------------------------------------------------------------------- |
+| ---------------- | ------------------------ | ------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | set              | key: `any`, value: `any` | `this`        | Sets a new key/value pair                                                                                                            |
 | get              | key: `any`               | `any`         | Returns the value                                                                                                                    |
 | getKey           | value: `any`             | `any`         | Returns the key                                                                                                                      |
